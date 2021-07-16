@@ -22,6 +22,10 @@ Você também pode se inscrever para receber as notificações de alterações d
 
 #### Últimas alterações realizadas na API.
 
+### 15/07/2021
+
+- Adicionado novo endpoint para [Download do CNAB de Retorno](/reference/v1/discharges/#download-do-cnab).
+
 ### 22/06/2021
 
 - Ajusta documentação em [Webhook Enviados](/reference/v1/webhook_deliveries/)

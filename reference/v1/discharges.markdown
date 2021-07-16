@@ -15,6 +15,7 @@ breadcrumb: CNAB (Retorno)
 | [GET /api/v1/discharges](#listar-cnabs) | Listar CNABs
 | [PUT /api/v1/discharges/:id/pay_off](#quitar-boletos) | Quitar boletos
 | [PUT /api/v1/discharges/:id/reprocess](#reprocessar-cnab) | Reprocessar CNAB
+| [GET /api/v1/discharges/:id/download](#download-do-cnab) | Download do CNAB
 
 ### Modelo de Dados
 
@@ -649,6 +650,44 @@ Array
 )
 </pre>
   </div> -->
+</div>
+
+### Download do CNAB
+
+`GET /api/v1/discharges/:id/download`
+
+#### Exemplo
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#bash3" role="tab" data-toggle="tab">Bash</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="bash3">
+    <small>Requisição:</small>
+
+  <pre class="bash">
+  curl -i \
+  -H "Authorization: Bearer $BOLETOSIMPLES_TOKEN" \
+  -H 'Content-Type: application/json' \
+  -H 'User-Agent: MyApp (myapp@example.com)' \
+  -X GET 'https://sandbox.boletosimples.com.br/api/v1/discharges/1/download'
+  </pre>
+
+      <small>Resposta:</small>
+
+  <pre class="http">
+  HTTP/1.1 200 OK
+  Server: Cowboy
+  Connection: keep-alive
+  Strict-Transport-Security: max-age=2592000
+  Content-Type: application/octet-stream
+  Content-Transfer-Encoding: binary
+  ...
+  02RETORNO01COBRANCA...
+  </pre>
+
+  </div>
 </div>
 
 ### Listar CNABs
